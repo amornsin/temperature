@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+        <button type="button" onClick="write()" name="write">write</button>
+        <button type="button" onClick="read()" name="read">read</button>
+        <button type="button" onClick="update()" name="update">update</button>
+        <button type="button" onClick="remove()" name="remove">remove</button>
+
+    <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyALUVltcDBkhPhmCwH9oQqnohcGwKP3uy4",
+        authDomain: "dht22.firebaseapp.com",
+        databaseURL: "https://dht22.firebaseio.com",
+        projectId: "firebase-dht22",
+        storageBucket: "firebase-dht22.appspot.com",
+        messagingSenderId: "984500337315"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <script src="index.js"> </script>
+  </body>
+</html>
+
+
+
+function read(){
+  var ref = firebase.database().ref();
+
+  ref.on("value", function(snapshot) {
+     console.log(snapshot.val());
+  }, function (error) {
+     console.log("Error: " + error.code);
+  });
+}
+
+function write(){
+  var playersRef = firebase.database().ref("players/");
+  var data = {
+     John: { number: 1, age: 30 },
+     Amanda: { number: 2, age: 20 }
+  }
+
+  playersRef.set (data);
+  console.log(data);
+
+}
+
+function update(){
+  var johnRef = firebase.database().ref("players/John");
+
+  johnRef.update ({
+     "number": 10
+  });
+}
+
+
+function remove(){
+  var johnRef = firebase.database().ref("players/John");
+
+  johnRef.update ({
+     "number": 10
+  });
+}
+
+var playersRef = firebase.database().ref("players/");
+
+playersRef.on("child_changed", function(data) {
+   var player = data.val();
+   console.log(player);
+});
