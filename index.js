@@ -1,5 +1,5 @@
 
-var db = firebase.database().ref("temp2/");
+var db = firebase.database().ref("temp/");
 
 db.on("value", function(data) {
    var temp = data.val();
