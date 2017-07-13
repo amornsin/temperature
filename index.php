@@ -28,7 +28,7 @@ integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/
 
     <div class="container-fluid">
       <div class="col-md-12 ch-wi">
-        <div id="temp">0  ํC</div>
+        <div id="temp">Loading..</div>
       </div>
     </div>
 
