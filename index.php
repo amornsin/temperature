@@ -46,9 +46,9 @@ integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/
       var config = {
         apiKey: "AIzaSyALUVltcDBkhPhmCwH9oQqnohcGwKP3uy4",
         authDomain: "dht22.firebaseapp.com",
-        databaseURL: "https://dht22.firebaseio.com",
-        projectId: "firebase-dht22",
-        storageBucket: "firebase-dht22.appspot.com",
+        databaseURL: "https://node-192eb.firebaseio.com",
+        projectId: "node-192eb",
+        storageBucket: "node-192eb.appspot.com",
         messagingSenderId: "984500337315"
       };
       firebase.initializeApp(config);
